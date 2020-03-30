@@ -59,3 +59,5 @@
 > function [y1, y2] = filename(x)
 y1= x^2
 y2= x^3 
+
+# Vectorisation instead of for loop use the vector variables alone 
