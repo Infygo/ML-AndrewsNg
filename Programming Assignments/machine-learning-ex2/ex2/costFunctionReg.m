@@ -24,13 +24,21 @@ grad = zeros(size(theta));
 z = X* theta;
 predictions_reg = sigmoid(z);
 
+% Split the cost terms into 3 make sure they are summedcorrectly
 
 J1 =  y'*log(predictions_reg);
 J2 = (1-y)'*log(1-predictions_reg);
+
+% unregularised cost fun value i.e without lambda term
 unreg_J = -(1/m) * (J1+J2);
+
+% cal of the regularisation term - make sure bias term theta0 is 
+% not summed in J3 term 
 
 theta(1) = 0 
 J3 = (lambda / (2 * m))* sum(theta.^2);
+
+% Final J term - Sum of Unregularised J and Lambda terms
 
 J = unreg_J + J3;
 
