@@ -1,0 +1,35 @@
+function [X_poly] = polyFeatures(X, p)
+%POLYFEATURES Maps X (1D vector) into the p-th power
+%   [X_poly] = POLYFEATURES(X, p) takes a data matrix X (size m x 1) and
+%   maps each example into its polynomial features where
+%   X_poly(i, :) = [X(i) X(i).^2 X(i).^3 ...  X(i).^p];
+%
+
+
+% You need to return the following variables correctly.
+X_poly = zeros(numel(X), p);
+% numel represents no of elements 12 in this case , p is 8  - 12 x 8
+
+% ====================== YOUR CODE HERE ======================
+% Instructions: Given a vector X, return a matrix X_poly where the p-th 
+%               column of X contains the values of X to the p-th power.
+%
+% 
+
+##vector1 = X;
+##
+##vector2 = [1:p];
+##
+##X_poly = bsxfun(@power,vector1 , vector2)
+
+for i = 1:p 
+  X_poly(:,i) = X.^i ;
+endfor
+
+
+
+
+
+% =========================================================================
+
+end
